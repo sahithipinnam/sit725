@@ -10,7 +10,7 @@ app.post('/add', (req, res) => {
     const { num1, num2 } = req.body;
  
     if (typeof num1 !== 'number' || typeof num2 !== 'number') {
-        return res.status(400).send({ error: 'num1 and num2 must be numbers' });
+        return res.status(400).send({ error: 'Please provide valid numbers' });
     }
  
     const result = num1 + num2;

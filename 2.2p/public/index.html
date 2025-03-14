@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container py-5">
-        <h1 class="mb-4">Express Calculator</h1>
+        <h1 class="mb-4">Add Two Numbers </h1>
  
         <div class="row mb-3">
             <div class="col">
@@ -24,16 +24,19 @@
         <div class="alert alert-info mt-3" id="result" role="alert" style="display:none;"></div>
  
         <script>
-            async function addNumbers() {
+            async function addNumbers() 
+            {
                 const num1 = parseFloat(document.getElementById('num1').value);
                 const num2 = parseFloat(document.getElementById('num2').value);
  
-                if (isNaN(num1) || isNaN(num2)) {
+                if (isNaN(num1) || isNaN(num2))
+                 {
                     alert('Please enter valid numbers');
                     return;
                 }
  
-                const response = await fetch('/add', {
+                const response = await fetch('/add', 
+                {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -43,10 +46,12 @@
  
                 const data = await response.json();
  
-                if (response.ok) {
+                if (response.ok) 
+                {
                     document.getElementById('result').innerText = `Result: ${data.result}`;
                     document.getElementById('result').style.display = 'block';
-                } else {
+                } else
+                 {
                     document.getElementById('result').innerText = `Error: ${data.error}`;
                     document.getElementById('result').classList.add('text-danger');
                     document.getElementById('result').style.display = 'block';
