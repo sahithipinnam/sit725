@@ -1,8 +1,8 @@
 const socket = io();
 
-socket.on('time', (timeString) => {
+socket.on('time', (msg) => {
 
-  console.log('Live time:', timeString);
-  document.getElementById('clock').innerText = timeString;
+  console.log('Live time:', msg);
+  document.getElementById('clock').innerText = msg;
   
 });
